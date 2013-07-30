@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.12'
+gem 'bootstrap-sass', '2.1'
+
 
  # For gems only used in development
 group :development, :test do
@@ -16,7 +18,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 
-  gem 'zurb-foundation', '~> 4.0.0'
 end
 
 gem 'jquery-rails'
