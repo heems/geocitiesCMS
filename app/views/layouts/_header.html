@@ -1,13 +1,16 @@
+<body id="top" class="preview" data-spy="scroll" data-target=".subnav" data-offset="80"> 
  <div class="navbar navbar-fixed-top">
    <div class="navbar-inner">
      <div class="container">
        <%= link_to 'Your Blog Name', root_path, { :class=>"brand" } %>
        <div class="nav-collapse" id="main-menu">
         <ul class="nav" id="main-menu-left">
-          <li><a href="/about">About</a></li>
+          <li><%= link_to 'About', about_path %></li>
         </ul>
        </div>
      </div>
    </div>
  </div>
+
+
 

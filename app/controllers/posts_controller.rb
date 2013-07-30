@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show]
+  before_filter :authenticate, :except => [:index, :show, :about]
 
   # GET /posts
   # GET /posts.json
@@ -11,6 +11,9 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
       format.atom
     end
+  end
+
+  def about
   end
 
   # GET /posts/1

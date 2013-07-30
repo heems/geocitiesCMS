@@ -2,6 +2,7 @@ Geocities::Application.routes.draw do
   resources :posts
 
   root :to => 'posts#index'
+  get 'about', to: 'posts#about', as: :about
 
 
   # The priority is based upon order of creation:

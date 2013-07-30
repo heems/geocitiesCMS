@@ -10,10 +10,10 @@
 <body>
 
   <%= render :partial => 'layouts/header' %>
+	
+  <%= yield %>
 
-  <div id="main">
-    <%= yield %>
-  </div>
+  <%= render :partial => 'layouts/footer' %>
 
 </body>
 </html>
