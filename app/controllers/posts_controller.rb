@@ -1,5 +1,6 @@
+#map /dashboard to authenticate and start admin session, end session on close
 class PostsController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show, :about]
+  #before_filter :authenticate, :except => [:index, :show, :about]
 
   # GET /posts
   # GET /posts.json
@@ -87,11 +88,15 @@ class PostsController < ApplicationController
     end
   end
 
+=begin
   private
   def authenticate
-    authenticate_or_request_with_http_basic do |name, password|
-      name == "admin" && password == "secret"
+    if admin?
+      authenticate_or_request_with_http_basic do |name, password|
+        name == "admin" && password == "secret"
+      end
     end
   end
+=end
 
 end
