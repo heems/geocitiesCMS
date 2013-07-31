@@ -1,18 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :admin?  
+
   protected
-  def admin?
-    session[:password] == "secret"
-  end
- 
 
   def authorize
     unless admin?
-      flash[:error] = "you ain't admin";
-      redirect_to home_path
+      flash[:error] = "you're not admin silly";
+      redirect_to root_path
       false
     end
+  end
+
+  def admin?
+    session[:password] == "secret"  #change "secret" to preferred password
   end
 
 

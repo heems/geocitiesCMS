@@ -10,8 +10,11 @@
 <body>
 
   <%= render :partial => 'layouts/header' %>
-	
+
+  <p><%= flash[:error] %></p>
+  <p><%= flash[:notice] %></p>
   <%= yield %>
+
 
   <%= render :partial => 'layouts/footer' %>
 

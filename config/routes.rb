@@ -1,8 +1,8 @@
 Geocities::Application.routes.draw do
   resources :posts
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions
 
-  match '/signin',  to: 'sessions#create', as: :login
+  match '/signin',  to: 'sessions#new', as: :login
   match '/signout', to: 'sessions#destroy'
 
   root :to => 'posts#index'

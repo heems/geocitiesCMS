@@ -1,16 +1,23 @@
 class SessionsController < ApplicationController
+	def new
+	end
 
 	def create
 	  session[:password] = params[:password]
-	  flash[:notice] = 'logged in'
-	  render 'new'
-	  #redirect_to login_path
+	  if admin?
+	  	flash[:notice] = 'You have logged in'
+	  	redirect_to root_path
+	  else
+	  	flash[:notice] = 'Incorrect password'
+	  	redirect_to login_path
+	  end
+	  
 	end
 	
 	def destroy
 	  reset_session
-	  flash[:notice] = 'logged out'
-	  #redirect_to login_path
+	  flash[:notice] = 'You have logged out'
+	  redirect_to root_path
 	end
 
 

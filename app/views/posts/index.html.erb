@@ -2,4 +2,6 @@
 
  <%= render :partial => @posts %>
 
- <%= link_to 'New Post', new_post_path %>
+<% if admin? %>
+	<%= link_to 'New Post', new_post_path %>
+<% end %>
